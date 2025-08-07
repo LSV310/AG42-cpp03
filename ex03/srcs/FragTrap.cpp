@@ -23,6 +23,15 @@ FragTrap::~FragTrap(void)
 	return ;
 }
 
+FragTrap&	FragTrap::operator=(const FragTrap& FragTrap)
+{
+	this->_name = FragTrap._name;
+	this->_hp = FragTrap._hp;
+	this->_ep = FragTrap._ep;
+	this->_ad = FragTrap._ad;
+	return (*this);
+}
+
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "\e[1;34m" << this->_name << "\e[0m is asking for a \e[1;35mHigh Five\e[0m !" << std::endl;

@@ -23,6 +23,15 @@ ScavTrap::~ScavTrap(void)
 	return ;
 }
 
+ScavTrap&	ScavTrap::operator=(const ScavTrap& ScavTrap)
+{
+	this->_name = ScavTrap._name;
+	this->_hp = ScavTrap._hp;
+	this->_ep = ScavTrap._ep;
+	this->_ad = ScavTrap._ad;
+	return (*this);
+}
+
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_hp == 0)

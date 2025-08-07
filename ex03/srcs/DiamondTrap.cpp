@@ -24,6 +24,15 @@ DiamondTrap::~DiamondTrap(void)
 	return ;
 }
 
+DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& DiamondTrap)
+{
+	this->_name = DiamondTrap._name;
+	this->_hp = DiamondTrap._hp;
+	this->_ep = DiamondTrap._ep;
+	this->_ad = DiamondTrap._ad;
+	return (*this);
+}
+
 void	DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
