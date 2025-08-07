@@ -33,52 +33,52 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_hp == 0)
 	{
-		std::cout << this->_name << " cannot attack because he is dead" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m cannot attack because he is \e[1;31mdead\e[0m" << std::endl;
 		return ;
 	}
 	if (this->_ep == 0)
 	{
-		std::cout << this->_name << " doesn't have enough energy to attack" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m doesn't have enough \e[1;33menergy\e[0m to attack" << std::endl;
 		return ;
 	}
 	this->_ep--;
-	std::cout << this->_name << " attacks " << target <<  std::endl;
+	std::cout << "\e[1;34m" << this->_name << " \e[1;35mattacks \e[1;34m" << target << "\e[0m" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hp == 0)
 	{
-		std::cout << this->_name << " is already dead" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m is already \e[1;31mdead\e[0m" << std::endl;
 		return ;
 	}
 	if (this->_hp < amount)
 	{
-		std::cout << this->_name << " loose " << this->_hp << " hit points (0 remaining)" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m \e[1;35mloose " << this->_hp << "\e[0m hit points (0 remaining)" << std::endl;
 		this->_hp = 0;
 	}
 	else
 	{
 		this->_hp -= amount;
-		std::cout << this->_name << " loose " << amount << " hit points (" << this->_hp <<  " remaining)" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m \e[1;35mloose " << amount << "\e[0m hit points (" << this->_hp <<  " remaining)" << std::endl;
 	}
 	if (this->_hp == 0)
-		std::cout << this->_name << " is dead" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m is \e[1;31mdead\e[0m" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hp == 0)
 	{
-		std::cout << this->_name << " cannot repair because he is dead" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m cannot repair because he is \e[1;31mdead\e[0m" << std::endl;
 		return ;
 	}
 	if (this->_ep == 0)
 	{
-		std::cout << this->_name << " doesn't have enough energy to repair" << std::endl;
+		std::cout << "\e[1;34m" << this->_name << "\e[0m doesn't have enough \e[1;33menergy\e[0m to repair" << std::endl;
 		return ;
 	}
 	this->_hp += amount;
 	this->_ep--;
-	std::cout << this->_name << " repairs himself (" << this->_hp <<  " remaining)" << std::endl;
+	std::cout << "\e[1;34m" << this->_name << "\e[1;35m repairs\e[0m himself (" << this->_hp <<  " remaining)" << std::endl;
 }
