@@ -2,6 +2,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -9,6 +10,7 @@ int	main(void)
 	ClapTrap	trapClap("TrapClap");
 	ScavTrap	scaveTrap("ScaveTrap");
 	FragTrap	fragTrap("FragTrap");
+	DiamondTrap	diamondTrap("DiamondTrap");
 
 	clapTrap.attack("TrapClap");
 	trapClap.takeDamage(2);
@@ -41,5 +43,10 @@ int	main(void)
 	fragTrap.attack("ScaveTrap");
 	scaveTrap.takeDamage(2);
 	fragTrap.highFivesGuys();
+	diamondTrap.attack("TrapClap");
+	trapClap.takeDamage(2);
+	diamondTrap.whoAmI();
+	diamondTrap.highFivesGuys();
+	diamondTrap.guardGate();
 	return (0);
 }
