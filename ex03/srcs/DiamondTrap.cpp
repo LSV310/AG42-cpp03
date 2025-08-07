@@ -3,14 +3,14 @@
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
 	this->_name = name;
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_ad = 30;
+	this->_hp = FragTrap::_hp;
+	this->_ep = ScavTrap::_ep;
+	this->_ad = FragTrap::_ad;
 	std::cout << "\e[1;30mDiamondTrap default constructor called\e[0m" << std::endl;
 	return ;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& DiamondTrap): ClapTrap(DiamondTrap._name), FragTrap(DiamondTrap._name), ScavTrap(DiamondTrap._name)
+DiamondTrap::DiamondTrap(const DiamondTrap& DiamondTrap): ClapTrap(DiamondTrap.ClapTrap::_name), FragTrap(DiamondTrap._name), ScavTrap(DiamondTrap._name)
 {
 	if (this != &DiamondTrap)
 		*this = DiamondTrap;
@@ -22,6 +22,11 @@ DiamondTrap::~DiamondTrap(void)
 {
 	std::cout << "\e[1;30mDiamondTrap destructor called\e[0m" << std::endl;
 	return ;
+}
+
+void	DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI(void)
