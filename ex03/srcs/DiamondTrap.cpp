@@ -41,4 +41,5 @@ void	DiamondTrap::attack(const std::string& target)
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "My name is \e[1;34m" << this->_name << "\e[0m and my ClapTrap name is \e[1;34m" << ClapTrap::_name << "\e[0m" << std::endl;
+	std::cout << "I have \e[1;35m" << this->_hp << "\e[0m hit points, \e[1;35m" << this->_ep << "\e[0m energy points and \e[1;35m" << this->_ad << "\e[0m attack damages" << std::endl;
 }

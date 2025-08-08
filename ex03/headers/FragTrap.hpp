@@ -5,6 +5,10 @@
 
 class FragTrap: virtual public ClapTrap {
 
+	protected:
+		unsigned int	_hp;
+		unsigned int	_ad;
+
 	public:
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& FragTrap);
