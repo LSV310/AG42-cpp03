@@ -6,7 +6,7 @@
 class ScavTrap : public ClapTrap {
 
 	public:
-		ScavTrap(std::string name);
+		ScavTrap(std::string name = "DefaultName");
 		ScavTrap(const ScavTrap& ScavTrap);
 		~ScavTrap(void);
 

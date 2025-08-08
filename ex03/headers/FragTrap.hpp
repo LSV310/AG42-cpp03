@@ -10,7 +10,7 @@ class FragTrap: virtual public ClapTrap {
 		unsigned int	_ad;
 
 	public:
-		FragTrap(std::string name);
+		FragTrap(std::string name = "DefaultName");
 		FragTrap(const FragTrap& FragTrap);
 		~FragTrap(void);
 

@@ -14,7 +14,7 @@ class ClapTrap {
 
 
 	public:
-		ClapTrap(std::string name);
+		ClapTrap(std::string name = "DefaultName");
 		ClapTrap(const ClapTrap& ClapTrap);
 		~ClapTrap(void);
 
